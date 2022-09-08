@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6.1_float_layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .clr {
+      clear: both;
+    }
+
+    .container {
+      margin: auto;
+      border: black solid 2px;
+      max-width: 60%;
+      margin-top: 50px;
+    }
+
+    .box {
+      border: black solid 2px;
+      max-width: 50%;
+      margin: auto;
+    }
+
+    #header{
+      background-color: yellow;
+      padding: 10px 25%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    #main {
+      background-color: purple;
+      float: right;
+      width: 35%;
+      margin-right: 25%;
+      padding: 10px 10px 10% 10%;
+      text-align: right;
+    }
+
+    #side {
+      background-color: green;
+      float: left;
+      width: 14.5%;
+      margin-left: 25%;
+      padding: 10px 10% 10% 10px;
+    }
+
+    #footer {
+      background-color: blue;
+      padding: 10px 25%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="header" class="box">Header</div>
+    <div id="side" class="box">Side</div>
+    <div id="main" class="box">Main</div>
+    <div class="clr"></div>
+    <div id="footer" class="box">Footer</div>
+  </div>
+</body>
+</html>

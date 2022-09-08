@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Combo">
+  <title>6.2_refactor_with_float_FWP</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      margin: auto;
+      max-width: 70%;
+      padding-left: 25%;
+      padding-right: 25%;
+      text-align: center;
+    }
+
+    body {
+      background-image: url('https://wallpapercave.com/uwp/uwp105758.png');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      color: rgb(194, 255, 255);
+      font-family: Combo, serif;
+    }
+    a {
+      color: black;
+    }
+
+    .text {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .about-me {
+      float: right;
+      width: 35%;
+      padding: 10px;
+    }
+
+    .h4 {
+      padding-left: 35%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="welcome" class="text">
+      <h1><em>Hi there my name is, </em>Ammar</h1>
+    </div>
+    <div id="job" class="text">
+      <h2>I am a Programmer</h2>
+    </div>
+    <img src="/HTML/images/picture.jpg" alt="My Picture" width="200" class="text">
+    <div id="about-me" class="about-me">
+      <p>I enjoy coding, watching stuff about it and learrning new things. <br>
+        I also play video games on my free time. <br>
+        In addition I enjoy watching computers and technology stuff like CPUs, GPUs, RAMs, Softwares, Operating Systems etc.
+      </p>
+    </div>
+    <div class="h4">Follow me</div>
+    <div class="socials">
+      <a href="#">Github</a>
+      <br>
+      <a href="#">Linkden</a>
+    </div>
+    </div>
+  </div>
+</body>
+</html>

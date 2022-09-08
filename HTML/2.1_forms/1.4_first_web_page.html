@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.1_forms</title>
+</head>
+<body>
+  <h1>Create an account</h1>
+  <form action="#">
+    <!-- email -->
+    <div>
+      <label for="email">Email:</label><br>
+      <input id="email" name="email" type="email" />
+    </div>
+    <br>
+    <!-- password -->
+    <div>
+      <label for="password">Password:</label><br>
+      <input id="password" name="password" type="password" />
+    </div>
+    <br>
+    <!-- age -->
+    <div>
+      <label for="age">Age:</label><br>
+      <input id="age" name="age" type="number" placeholder="Select Age" min="0" />
+    </div>
+    <br>
+    <!-- about -->
+    <div>
+      <label for="about">Tell us a little about yourself:</label>
+      <br>
+      <textarea name="about" id="about" cols="50" rows="5"></textarea>
+    </div>
+    <br>
+    <!-- terms and service -->
+    <div>
+      <input id="terms" name="terms" type="checkbox" />
+      <label for="terms">i agree to the</label>
+      <a href="#">terms of service</a>
+    </div>
+    <br>
+    <!-- submit -->
+    <div>
+      <input type="submit" value="Sign up" />
+    </div>
+  </form>
+</body>
+</html>
