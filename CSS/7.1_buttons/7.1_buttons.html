@@ -15,27 +15,162 @@
 
     body {
       text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #536CE4;
     }
-    
+
+    .box {
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+
+    .box h3 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    /* flat buttons */
+    /* ----------------- */
+    .flat-r {
+      display: inline-block;
+      cursor: pointer;
+      border: #4a6ca0 solid 1px;
+      background-color: #5895f4;
+      color: white;
+      padding: 10px;
+      margin-right: 10px;
+    }
+
+    .flat-r:hover {
+      background-color: #498df5;
+    }
+
+    .flat-s {
+      display: inline-block;
+      cursor: pointer;
+      border: yellow solid 1px;
+      background-color: #cccc00;
+      color: white;
+      padding: 6px;
+    }
+
+    .flat-s:hover {
+      background-color: #b2b200;
+    }
+
+    /* round buttons */
+    /* ----------------- */
+    .round-r {
+      display: inline-block;
+      cursor: pointer;
+      border: #38A739 solid 1px;
+      background-color: #38A739;
+      color: white;
+      padding: 10px;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+
+    .round-r:hover {
+      background-color: #329633;
+    }
+
+    /* ----------------- */
+    .round-s {
+      display: inline-block;
+      cursor: pointer;
+      border: red solid 1px;
+      background-color: red;
+      color: white;
+      padding: 6px;
+      border-radius: 20px;
+    }
+
+    .round-s:hover {
+      background-color: #e50000;
+    }
+
+    /* flat ghost buttons */
+    /* ----------------- */
+    .flat-ghost-r {
+      display: inline-block;
+      cursor: pointer;
+      border: #C90037 solid 1px;
+      background-color: transparent;
+      color: white;
+      padding: 10px;
+      margin-right: 10px;
+    }
+
+    .flat-ghost-r:hover {
+      background-color: red;
+    }
+
+    /* ----------------- */
+    .flat-ghost-s {
+      display: inline-block;
+      cursor: pointer;
+      border: purple solid 1px;
+      background-color: transparent;
+      color: white;
+      padding: 8px;
+    }
+
+    .flat-ghost-s:hover {
+      background-color: #9a32ff;
+    }
+
+    /* round ghost buttons */
+    /* ----------------- */
+    .round-ghost-r {
+      display: inline-block;
+      cursor: pointer;
+      border: yellow solid 1px;
+      background-color: transparent;
+      color: white;
+      padding: 10px;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+
+    .round-ghost-r:hover {
+      background-color: orange;
+    }
+
+    /* ----------------- */
+    .round-ghost-s {
+      display: inline-block;
+      cursor: pointer;
+      border: cyan solid 1px;
+      background-color: transparent;
+      color: white;
+      padding: 8px;
+      border-radius: 20px;
+    }
+
+    .round-ghost-s:hover {
+      background-color: #5895f4;
+    }
+
   </style>
 </head>
 <body>
-  <div class="flat">
+  <div class="box">
     <h3>Flat</h3>
     <button class="flat-r">Register</button>
     <button class="flat-s">Submit</button>
   </div>
-  <div class="round">
+  <div class="box">
     <h3>Round</h3>
     <button class="round-r">Register</button>
     <button class="round-s">Submit</button>
   </div>
-  <div class="flat-ghost">
+  <div class="box">
     <h3>Flat Ghost</h3>
     <button class="flat-ghost-r">Register</button>
     <button class="flat-ghost-s">Submit</button>
   </div>
-  <div class="round-ghost">
+  <div class="box">
     <h3>Round Ghost</h3>
     <button class="round-ghost-r">Register</button>
     <button class="round-ghost-s">Submit</button>
