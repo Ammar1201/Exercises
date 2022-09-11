@@ -6,15 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>8.3_positioning</title>
   <style>
-    /* * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    } */
-
     .divs {
       border: black solid 2px;
       padding-bottom: 20px;
+      position: absolute;
+      background-color: white;
     }
 
     #div-1 {
@@ -25,16 +21,22 @@
     #div-2 {
       width: 250px;
       height: 230px;
+      top: 160px;
+      left: 180px;
     }
 
     #div-3 {
-      width: 800px;
+      width: 675px;
       height: 150px;
+      top: 400px;
+      z-index: 1;
     }
 
     #div-4 {
       width: 100px;
       height: 800px;
+      left: 550px;
+      z-index: 2;
     }
   </style>
 </head>
