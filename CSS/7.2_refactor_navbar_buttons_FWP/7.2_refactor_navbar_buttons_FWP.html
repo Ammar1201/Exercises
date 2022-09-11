@@ -12,20 +12,49 @@
       padding: 0;
     }
 
-    .container {
-      margin: auto;
-      max-width: 100%;
-      padding-left: 25%;
-      padding-right: 25%;
-      text-align: center;
-    }
-
     body {
       background-image: url('https://wallpapercave.com/uwp/uwp105758.png');
       background-repeat: no-repeat;
       background-size: 100%;
       color: rgb(194, 255, 255);
       font-family: Combo, serif;
+      height: 3000px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      border-bottom: solid skyblue 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      text-align: center;
+    }
+
+    nav ul li {
+      display: inline-block;
+      padding: 10px;
+    }
+
+    nav ul li button {
+      padding: 10px;
+      background-color: transparent;
+      color: rgb(194, 255, 255);
+      border: none;
+      cursor: pointer;
+    }
+
+    nav ul li button:hover {
+      color: cyan;
+    }
+
+    .container {
+      margin: auto;
+      max-width: 100%;
+      padding-left: 25%;
+      padding-right: 25%;
+      text-align: center;
     }
     
     a {
@@ -57,7 +86,12 @@
 </head>
 <body>
   <nav>
-
+    <ul>
+      <li><button>Home</button></li>
+      <li><button>Socials</button></li>
+      <li><button>About</button></li>
+      <li><button>Contact</button></li>
+    </ul>
   </nav>
   <div class="container">
     <div id="welcome" class="text">
