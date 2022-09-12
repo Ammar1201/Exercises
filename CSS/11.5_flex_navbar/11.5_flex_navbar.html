@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11.5_flex_navbar</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .nav-list {
+      background-color: #333;
+      margin: 0;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .nav-item {
+      list-style: none;
+      margin-right: 2rem;
+    }
+
+    .nav-item a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .nav-item a:hover {
+      color: #999;
+    }
+
+    .nav-item:first-child {
+      margin-right: auto;
+      margin-left: 2rem;
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="nav-list">
+      <li class="nav-item" style="color: #fff;">APPLESEEDS</li>
+      <li class="nav-item">
+        <a href="#">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a href="#">ABOUT</a></li>
+      <li class="nav-item"><a href="#">PORTFOLIO</a>
+      </li>
+      <li class="nav-item">
+        <a href="#">CONTACT</a>
+      </li>
+    </ul>
+  </nav>
+</body>
+</html>
