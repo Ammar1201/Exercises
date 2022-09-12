@@ -16,7 +16,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     
-    .nav-list {
+    nav ul {
       background-color: #333;
       margin: 0;
       padding: 1rem 0;
@@ -25,39 +25,59 @@
       align-items: center;
     }
 
-    .nav-item {
+    nav ul li {
       list-style: none;
       margin-right: 2rem;
     }
 
-    .nav-item a {
+    nav ul li a {
       text-decoration: none;
       color: #fff;
     }
 
-    .nav-item a:hover {
+    nav ul li a:hover {
       color: #999;
     }
 
-    .nav-item:first-child {
+    nav ul li:first-child {
       margin-right: auto;
       margin-left: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: block;
+        text-align: center;
+      }
+
+      nav ul li {
+        display: block;
+        margin: 0;
+        padding: 10px;
+      }
+
+      nav ul li:first-child {
+        margin: 0;
+        font-size: 20px;
+      }
     }
 
   </style>
 </head>
 <body>
   <nav>
-    <ul class="nav-list">
-      <li class="nav-item" style="color: #fff;">APPLESEEDS</li>
-      <li class="nav-item">
+    <ul>
+      <li style="color: #fff;">
+        APPLESEEDS
+      </li>
+      <li>
         <a href="#">HOME</a>
       </li>
-      <li class="nav-item">
+      <li>
         <a href="#">ABOUT</a></li>
-      <li class="nav-item"><a href="#">PORTFOLIO</a>
+      <li><a href="#">PORTFOLIO</a>
       </li>
-      <li class="nav-item">
+      <li>
         <a href="#">CONTACT</a>
       </li>
     </ul>
