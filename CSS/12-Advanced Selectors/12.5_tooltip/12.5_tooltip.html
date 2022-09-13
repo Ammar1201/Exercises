@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12.5_tooltip</title>
+  <style>
+    p {
+      width: 600px;
+      margin: auto;
+      margin-top: 40px;
+      font-size: 30px;
+    }
+
+    a {
+      text-decoration: none;
+      color: red;
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      font-size: 16px;
+      width: 160px;
+      background-color: yellow;
+      color: black;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 12px;
+    
+      /* Position the tooltip text */
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -60px;
+      z-index: 1;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
+
+    .tooltip .tooltiptext::after {
+      content: " ";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis error minus magnam doloribus aut iste, ducimus vitae saepe exercitationem, maiores tempora sit ipsum ex sed harum possimus reiciendis repudiandae ab nisi at expedita eligendi iusto! Debitis
+    <a href="#" class="tooltip">corporis <span class="tooltiptext">this is a badass tooltip</span></a>, dignissimos reiciendis at repudiandae necessitatibus eum esse molestiae ipsam reprehenderit cupiditate aliquid totam deserunt voluptate, placeat dolores. Nobis ad, alias ipsum rem quos veritatis minima dolore saepe itaque nihil laborum cum beatae tempora? Iusto animi illum ut. Qui nihil voluptates, velit dicta iste maiores doloremque fuga debitis voluptate rerum beatae ea ex possimus 
+    <a href="#" class="tooltip">tenetur <span class="tooltiptext">this is a badass tooltip</span></a> vero assumenda error est ipsa quam corrupti at. Dolore.
+  </p>
+  <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut quaerat at harum, dicta possimus soluta facere, distinctio sint sequi hic, error maiores consectetur eveniet eum dolorum inventore nostrum! Eos hic, magnam excepturi, porro itaque voluptates perferendis ipsa nam inventore atque totam magni. Fugiat odio expedita laborum suscipit voluptatibus veniam doloribus dolor in minima molestiae et, illo 
+    <a href="#" class="tooltip">corporis <span class="tooltiptext">this is a badass tooltip</span></a> distinctio ipsam quas excepturi id asperiores eveniet deserunt? Deserunt quia suscipit odio placeat voluptatum illo tempora dolor facilis, excepturi, rem magni! Itaque repellendus laudantium totam eveniet nam ea harum fugit, quia illo nostrum quod excepturi, nesciunt cum? Porro aspernatur officiis mollitia ut ab.
+  </p>
+</body>
+</html>
