@@ -5,8 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>12.1_href_attribute</title>
+  <style>
+    h2 a {
+      text-decoration: none;
+    }
+
+    h2 a::after {
+      content: ' (https://www.appleseeds.org.il/)';
+    }
+  </style>
 </head>
 <body>
-  
+  <h2>Please visit this <a href="https://www.appleseeds.org.il/" target="_blank">website</a> for more information</h2>
 </body>
 </html>
