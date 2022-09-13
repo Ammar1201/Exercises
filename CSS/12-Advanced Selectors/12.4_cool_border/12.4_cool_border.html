@@ -6,29 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>12.4_cool_border</title>
   <style>
-    .box {
-      background-color: black;
-      width: 200px;
-      height: 200px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
+    .box1 {
+      background: white;
+      width: 400px;
+      height: 400px;
+      margin: auto;
+      margin-top: 300px;
     }
 
-    .box::after {
-      content: 'cool border';
-      color: #fff;
-      border-style: groove;
-      border: red groove 2px;
-      padding: 20px;
-      width: 50%;
-      text-align: center;
+    /* .box1::before {
+
+    } */
+
+    /* .box1::after {
+
+    } */
+
+    .box2 {
+      height: 200px;
+      width: 200px;
+      margin: auto;
+      padding-top: 100px;
     }
+
+    .box2 h3 {
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    /* .box2::before {
+
+    } */
+
+    /* .box2::after {
+
+    } */
   </style>
 </head>
-<body>
-  <div class="box"></div>
+<body style="background-color: black;">
+  <div class="box1">
+    <div class="box2">
+      <h3>cool border</h3>
+    </div>
+  </div>
 </body>
 </html>
