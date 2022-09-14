@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>14.3_navbar_animation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f4f4f4;
+      height: 100vh;
+    }
+
+    nav {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 10px 40px;
+      margin: 10px 20px;
+      border: none;
+      background: transparent;
+      font-size: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .btn:hover {
+      cursor: pointer;
+    }
+
+    .btn::before {
+      content: '';
+      height: 100%;
+      width: 100%;
+      background: #333;
+      position: absolute;
+      top: -46px;
+      right: 8px;
+      transform: translateX(-100%);
+      transition: all 0.5s ease-in;
+    }
+
+    .btn:hover::before {
+      transform: translateX(0);
+    }
+
+    .btn::after {
+      content: '';
+      height: 100%;
+      width: 100%;
+      background: #333;
+      position: absolute;
+      bottom: -46px;
+      right: 8px;
+      transform: translateX(110%);
+      transition: all 0.5s ease-in;
+    }
+
+    .btn:hover::after {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <button class="btn">Home</button>
+    <button class="btn">About</button>
+    <button class="btn">Services</button>
+    <button class="btn">Portfolio</button>
+    <button class="btn">Contact</button>
+  </nav>
+</body>
+</html>
