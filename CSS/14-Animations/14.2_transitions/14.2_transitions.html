@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>14.2_transitions</title>
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 20px;
+      margin: 0 20px;
+      background: transparent;
+      height: 60px;
+      width: 150px;
+    }
+
+    /* TranslateY Button */
+    .btn-y {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-y::after {
+      content: 'cool!';
+      background: red;
+      color: black;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-60px);
+      transition: all 0.5s ease-in-out;
+    }
+
+    .btn-y:hover::after {
+      transform: translateY(0)
+    }
+
+    /* TranslateX Button */
+    .btn-x {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-x::after {
+      content: '';
+      background: blue;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.7;
+      transition: all 0.5s ease-in-out;
+      transform: translateX(-150px);
+    }
+
+    .btn-x:hover::after {
+      transform: translateX(0);
+    }
+
+    /* Rotate Button */
+    .btn-rotate {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-rotate::after {
+      content: '';
+      background: yellow;
+      width: 200%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 30px;
+      opacity: 0.7;
+      transform: rotate(90deg);
+      transition: all 0.5s ease-in-out;
+    }
+
+    .btn-rotate:hover::after {
+      transform: rotate(0);
+    }
+
+    /* Scale Button */
+    .btn-scale {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-scale::after {
+      content: 'Scale';
+      visibility: hidden;
+      background: black;
+      color: #fff;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: scale(4);
+      transition: all 0.5s ease-in-out;
+      padding: 20px 0;
+    }
+
+    .btn-scale:hover::after {
+      visibility: visible;
+      transform: scale(1);
+    }
+
+    /* Skew Button */
+    .btn-skew {
+      position: relative;
+      /* overflow: hidden; */
+    }
+
+    .btn-skew:hover {
+      transform: skew(-5deg);
+    }
+
+    .btn-skew::after {
+      content: '';
+      visibility: hidden;
+      background: #ff00ee;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 15px;
+      left: 75px;
+      opacity: 0.5;
+      transform: skew(50deg);
+      transition: all 0.5s ease-in-out;
+    }
+
+    .btn-skew:hover::after {
+      visibility: visible;
+      transform: skew(0);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <button class="btn btn-y">TranslateY</button>
+  <button class="btn btn-x">TranslateX</button>
+  <button class="btn btn-rotate">Rotate</button>
+  <button class="btn btn-scale">Scale</button>
+  <button class="btn btn-skew">Skew</button>
+</body>
+</html>
