@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15.3_responsive_grid</title>
+  <style>
+    .grid {
+      display: grid;
+      grid-template-areas: 
+      'red-box red-box red-box red-box'
+      'blue-box green-box green-box purple-box'
+      'yellow-box yellow-box yellow-box yellow-box'
+      ;
+      gap: 1rem;
+    }
+
+    .box {
+      padding: 0.25rem;
+      height: 62vh;
+      border-radius: 10px;
+    }
+
+    .red-box {
+      background: red;
+      grid-area: red-box;
+      height: 16vh;
+    }
+
+    .blue-box {
+      background: blue;
+      grid-area: blue-box;
+    }
+
+    .green-box {
+      background: green;
+      grid-area: green-box;
+    }
+
+    .purple-box {
+      background: purple;
+      grid-area: purple-box;
+    }
+
+    .yellow-box {
+      background: yellow;
+      grid-area: yellow-box;
+      height: 16vh;
+    }
+
+    /* Tablet */
+    @media (min-width:901px) and (max-width:1400px) {
+      .grid {
+        grid-template-areas: 
+        'red-box red-box red-box red-box'
+        'blue-box blue-box green-box green-box'
+        'purple-box purple-box purple-box purple-box'
+        'yellow-box yellow-box yellow-box yellow-box'
+      ;
+      }
+
+      .box {
+        height: 34vh;
+      }
+
+      .red-box, .yellow-box {
+        height: 12vh;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width:900px) {
+      .grid {
+        grid-template-areas: 
+        'red-box'
+        'blue-box'
+        'green-box'
+        'purple-box'
+        'yellow-box'
+      ;
+      }
+
+      .box {
+        height: 20vh;
+      }
+
+      .red-box, .yellow-box {
+        height: 12vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="box red-box">Header</div>
+    <div class="box blue-box">Sidebar</div>
+    <div class="box green-box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, sed placeat? Repudiandae explicabo ad fugit.</div>
+    <div class="box purple-box">Sidebar 2</div>
+    <div class="box yellow-box">Footer</div>
+  </div>
+</body>
+</html>

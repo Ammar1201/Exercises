@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15.1_grid_basics</title>
+  <style>
+    .grid {
+      display: grid;
+      grid-template-areas: 
+      'red-box red-box blue-box blue-box'
+      'green-box purple-box purple-box purple-box'
+      'yellow-box yellow-box yellow-box yellow-box'
+      ;
+      gap: 1rem;
+    }
+
+    .box {
+      padding: 0.25rem;
+      height: 32vh;
+      border-radius: 10px;
+    }
+
+    .red-box {
+      background: red;
+      grid-area: red-box;
+    }
+
+    .blue-box {
+      background: blue;
+      grid-area: blue-box;
+    }
+
+    .green-box {
+      background: green;
+      grid-area: green-box;
+    }
+
+    .purple-box {
+      background: purple;
+      grid-area: purple-box;
+    }
+
+    .yellow-box {
+      background: yellow;
+      grid-area: yellow-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="box red-box"></div>
+    <div class="box blue-box"></div>
+    <div class="box green-box"></div>
+    <div class="box purple-box"></div>
+    <div class="box yellow-box"></div>
+  </div>
+</body>
+</html>
