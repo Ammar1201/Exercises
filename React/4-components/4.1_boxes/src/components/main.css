@@ -1,5 +1,5 @@
 .box1 {
-  background-color: green;
+  background-color: lightgreen;
   width: 800px;
   height: 500px;
   z-index: -1;
@@ -9,7 +9,7 @@
 }
 
 .box2 {
-  background-color: blue;
+  background-color: lightblue;
   width: 700px;
   height: 400px;
   z-index: 1;
@@ -19,7 +19,7 @@
 }
 
 .box3 {
-  background-color: pink;
+  background-color: lightpink;
   width: 600px;
   height: 300px;
   z-index: 2;
