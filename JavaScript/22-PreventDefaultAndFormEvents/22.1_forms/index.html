@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>22.1_forms</title>
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    form button {
+      width: 100px;
+      margin-left: 80px;
+    }
+
+    form label {
+      width: 110px;
+    }
+
+    form div {
+      display: flex;
+    }
+
+    #confirm-information {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      visibility: hidden;
+    }
+
+    #confirm-information button {
+      width: 100px;
+      margin-right: 10px;
+    }
+
+    #confirm-information label {
+      margin-bottom: 10px;
+    }
+
+    .editable {
+      pointer-events: all;
+    }
+
+    .none-editable {
+      pointer-events: none;
+    }
+
+  </style>
+</head>
+<body>
+  <form id="form">
+    <div>
+      <label for="name">Name: </label>
+      <input type="text" name="name" required="true">
+    </div>
+    <div>
+      <label for="age">Age: </label>
+      <input type="number" name="age" required="true">
+    </div>
+    <div>
+      <label for="mail">Email Address: </label>
+      <input type="email" name="email" required="true">
+    </div>
+    <button id="submit">Submit</button>
+  </form>
+
+  <div id="confirm-information">
+    <label>These Are yor Information!</label>
+    <label id="name"></label>
+    <label id="age"></label>
+    <label id="email"></label>
+    <label>Do you confirm these information ? If you want to edit them press <span style="color: red;">Cancel!</span></label>
+    <div>
+      <button id="btnCancel">Cancel</button>
+      <button id="btnConfirm" form="form">Confirm</button>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

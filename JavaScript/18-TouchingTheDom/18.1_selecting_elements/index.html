@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <h1>Header</h1>
+  <p>Paragraph</p>
+  <a href="#">link</a>
+  <img src="" alt="" />
+  <div class="x">Div with a class</div>
+  <div id="y">Div with an id</div>
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+</body>
+  <script>
+  //your js code here
+  const elementsNotQuery = [];
+  elementsNotQuery.push(document.getElementsByTagName('h1'));
+  elementsNotQuery.push(document.getElementsByTagName('p'));
+  elementsNotQuery.push(document.getElementsByTagName('a'));
+  elementsNotQuery.push(document.getElementsByTagName('img'));
+  elementsNotQuery.push(document.getElementsByTagName('div'));
+  elementsNotQuery.push(document.getElementsByTagName('input'));
+  console.log(elementsNotQuery);
+
+  console.log('---------------------');
+
+  const elementsQuery = [];
+  elementsQuery.push(document.querySelector('h1'));
+  elementsQuery.push(document.querySelector('p'));
+  elementsQuery.push(document.querySelector('a'));
+  elementsQuery.push(document.querySelector('.x'));
+  elementsQuery.push(document.querySelector('#y'));
+  elementsQuery.push(document.querySelectorAll('.text'));
+  console.log(elementsQuery);
+
+  console.log('---------------------');
+
+  document.querySelectorAll('input').forEach((input) => {
+    console.log(input);
+  });
+
+  console.log('---------------------');
+
+  const inputs = document.getElementsByTagName('input');
+  for(let i = 0; i < inputs.length; i++) {
+    console.log(inputs[i]);
+  }
+  </script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Inputs</title>
+  <style>
+    .container {
+      width: 200px;
+      height: 200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .box {
+      text-align: center;
+    }
+
+    .input {
+      width: 15px;
+    }
+
+    .btn:hover {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <label>Text to copy:</label>
+    <br>
+    <label>123456</label>
+    <form action="" class="box" id="form">
+      <div>
+        <input type="text" class="input" maxlength="1">
+        <input type="text" class="input" maxlength="1">
+        <input type="text" class="input" maxlength="1">
+        <input type="text" class="input" maxlength="1">
+        <input type="text" class="input" maxlength="1">
+        <input type="text" class="input" maxlength="1">
+      </div>
+      <input type="submit" value="Verify" class="btn">
+    </form>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

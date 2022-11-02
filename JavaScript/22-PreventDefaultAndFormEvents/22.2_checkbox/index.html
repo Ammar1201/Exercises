@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>22.2_checkbox</title>
+  <style>
+    .shown {
+      visibility: visible;
+    }
+
+    .hidden {
+      visibility: hidden;
+    }
+
+    img {
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <label>Show Image</label>
+    <input type="checkbox">
+  </form>
+  <br>
+  <img src="./img/img.jpg" alt="img" class="hidden">
+  <script>
+    const checkbox = document.querySelector('input[type=checkbox]');
+    const img = document.querySelector("img");
+    checkbox.addEventListener('change', (event) => {
+      if(checkbox.checked) {
+        img.setAttribute("class", "shown");
+      }
+      else {
+        img.setAttribute("class", "hidden");
+      }
+    });
+  </script>
+</body>
+</html>
