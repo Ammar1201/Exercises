@@ -1,10 +1,11 @@
-import Quiz from './components/Quiz'
+import Quiz from './components/Quiz';
+import QuizTitle from './components/QuizTitle';
 
 function App() {
   return (
     <div>
-      <h1>How Do You Like Front End?</h1>
-      <Quiz></Quiz>
+      <QuizTitle />
+      <Quiz />
     </div>
   );
 }

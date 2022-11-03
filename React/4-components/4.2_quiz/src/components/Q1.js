@@ -4,8 +4,8 @@ import Q1Input from './Q1Input';
 function Q1() {
   return (
     <div>
-      <Q1Title></Q1Title>
-      <Q1Input></Q1Input>
+      <Q1Title />
+      <Q1Input />
     </div>
   );
 }
