@@ -1,0 +1,46 @@
+.red {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.blue {
+  background-color: blue;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.green {
+  background-color: green;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.yellow {
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.purple {
+  background-color: purple;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.wrapper {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
