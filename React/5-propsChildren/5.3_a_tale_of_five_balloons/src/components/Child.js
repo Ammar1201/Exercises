@@ -1,11 +1,6 @@
-import Balloon from './Balloon';
-
-function Child(props) {
+function Child({children}) {
   return (
-    <div>
-      <h3>{props.name}</h3>
-      <Balloon color={props.color} />
-    </div>
+    <div>{children}</div>
   );
 }
 

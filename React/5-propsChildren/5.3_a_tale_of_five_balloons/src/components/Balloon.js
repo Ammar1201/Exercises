@@ -1,7 +1,7 @@
 import './Mother.css';
 
-function Balloon(props) {
-  return <div className={props.color}></div>;
+function Balloon({children}) {
+  return <div className={children}></div>;
 }
 
 export default Balloon;
