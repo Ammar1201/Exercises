@@ -2,24 +2,16 @@ import React, {useState} from 'react';
 import './Show.css';
 
 function Show() {
-  const [hidden, setHidden] = useState('');
-  const [showOrHide, setShowOrHide] = useState(true);
+  const [toggler, setToggler] = useState(false);
   
   const handleClick = () => {
-    if(showOrHide) {
-      setShowOrHide(false);
-      setHidden(' hidden');
-    }
-    else {
-      setShowOrHide(true);
-      setHidden('');
-    }
+    setToggler((prevState) => !prevState);
   };
 
   return (
     <div className='box'>
       <button onClick={handleClick}>show/hide</button>
-      <div className={'inner-box' + hidden}></div>
+      <div className={toggler ? 'inner-box' : ''}></div>
     </div>
   );
 }

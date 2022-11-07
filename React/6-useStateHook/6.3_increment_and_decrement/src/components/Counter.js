@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './Counter.css';
 
 function Counter(props) {
-  const [counter, setCounter] = useState(props.counter);
+  const [counter, setCounter] = useState(0);
   const [color, setColor] = useState(props.color);
   
   const handleClickIncrement = () => {
@@ -15,7 +15,7 @@ function Counter(props) {
     }
 
     if(counter < 10) {
-      setCounter(counter + 1);
+      setCounter(prevCounter => prevCounter + 1);
     }
   };
 
@@ -29,8 +29,7 @@ function Counter(props) {
     }
 
     if(counter > -10) {
-      setCounter(counter - 1);
-    
+      setCounter(prevCounter => prevCounter - 1);
     }
   };
 

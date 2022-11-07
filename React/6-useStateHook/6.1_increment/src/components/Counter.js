@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import './Counter.css';
 
-function Counter(props) {
-  const [counter, setCounter] = useState(props.counter);
+function Counter() {
+  const [counter, setCounter] = useState(1);
   
   const handleClick = () => {
-    setCounter(counter + 1);
+    setCounter(prevCounter => prevCounter + 1);
   };
 
   return (

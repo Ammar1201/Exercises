@@ -1,10 +1,11 @@
+import Name from './Name';
 import './Card.css';
 
 function Card({person}) {
   return (
     <div className='card'>
-      <h3>{person.name},</h3>
-      <h3>Born {person.birthday}.</h3>
+      <Name name={person.name} />
+      <h3>Born: {person.birthday}.</h3>
       <h3>Loves to eat →</h3>
       <h3>Meat:</h3>
       {person.favoriteFoods.meats.map((meat, index) => {
