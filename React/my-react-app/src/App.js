@@ -16,23 +16,16 @@ const App = () => {
       amount: 294.67,
       date: new Date(2021, 2, 28),
     },
-    {
-      id: 'e4',
-      title: 'New Desk (Wooden)',
-      amount: 450,
-      date: new Date(2021, 5, 12),
-    },
-    {
-      id: 'e5',
-      title: 'Gaming PC',
-      amount: 5000,
-      date: new Date(2022, 10, 10),
-    },
   ];
+
+  const addExpenseHandler = expense => {
+    console.log('In App.js');
+    console.log(expense);
+  };
 
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
