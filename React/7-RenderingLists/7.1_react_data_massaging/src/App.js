@@ -9,7 +9,7 @@ const getNames = () => {
 
 const getBornBefore = () => {
   return data.filter(person => {
-    if(parseInt(person.birthday.substring(5)) < 1990) {
+    if(parseInt(person.birthday.substring(person.birthday.length - 4)) < 1990) {
       return person;
     }
   });

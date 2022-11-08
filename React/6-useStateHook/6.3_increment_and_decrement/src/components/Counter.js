@@ -3,41 +3,32 @@ import './Counter.css';
 
 function Counter(props) {
   const [counter, setCounter] = useState(0);
-  const [color, setColor] = useState(props.color);
   
-  const handleClickIncrement = () => {
-    if(counter > -1) {
-      setColor('green');
-    }
-
-    if(counter === -1) {
-      setColor('');
-    }
-
-    if(counter < 10) {
-      setCounter(prevCounter => prevCounter + 1);
+  const handleClick = ({target}) => {
+    const addToCounter = target.id === 'inc' ? 1 : -1;
+    const futureCounter = counter + addToCounter;
+    if(futureCounter >= -10 && futureCounter <= 10) {
+      setCounter(prevCounter => prevCounter + addToCounter);
     }
   };
 
-  const handleClickDecrement = () => {
-    if(counter < 1) {
-      setColor('red');
+  const setColor = (num) => {
+    if(num > 0) {
+      return 'green';
     }
-
-    if(counter === 1) {
-      setColor('');
+    else if(num < 0) {
+      return 'red';
     }
-
-    if(counter > -10) {
-      setCounter(prevCounter => prevCounter - 1);
+    else {
+      return '';
     }
   };
 
   return (
     <div>
-      <button onClick={handleClickDecrement}>decrement</button>
-      <label className={color}>{counter}</label>
-      <button onClick={handleClickIncrement}>increment</button>
+      <button id='dec' onClick={handleClick}>decrement</button>
+      <label className={setColor(counter)}>{counter}</label>
+      <button id='inc' onClick={handleClick}>increment</button>
     </div>
   );
 }
