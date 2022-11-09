@@ -1,6 +1,10 @@
-function CheckBox({text, check}) {
+import React, {useState} from 'react';
+
+
+function CheckBox({text, checked}) {
+  const [isChecked, setIsChecked] = useState(checked);
   return <div>
-    <input type="checkbox" checked={check} />
+    <input type="checkbox" checked={isChecked} onChange={() => {setIsChecked(prev => !prev)}} />
     <label>{text}</label>
   </div>;
 }
