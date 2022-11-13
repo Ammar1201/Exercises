@@ -1,11 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import FavoriteColor from "./components/FavoriteColor";
 
 const App = () => {
-  const [favoriteColor, setFavoriteColor] = useState('');
-  useEffect(() => {
-    setFavoriteColor('Blue');
-  }, [favoriteColor]);
-  return <h1>My favorite color is: {favoriteColor}</h1>;
+  return <FavoriteColor color={'blue'} />;
 }
 
 export default App;

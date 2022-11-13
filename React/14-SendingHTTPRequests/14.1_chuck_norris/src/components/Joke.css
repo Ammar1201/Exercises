@@ -1,0 +1,10 @@
+.joke {
+  margin-top: 100px;
+}
+
+.joke p {
+  text-align: center;
+  margin: auto;
+  font-size: 3rem;
+  width: 500px;
+}

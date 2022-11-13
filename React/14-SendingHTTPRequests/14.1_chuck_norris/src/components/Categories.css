@@ -1,0 +1,17 @@
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.categories button {
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  background: black;
+  color: #fff;
+}
+
+.categories button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
