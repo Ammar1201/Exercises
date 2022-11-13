@@ -1,0 +1,31 @@
+.search_joke {
+  margin-top: 200px;
+  text-align: center;
+}
+
+.search_joke input {
+  padding: .5rem 2rem;
+  margin-right: 10px;
+}
+
+.search_joke button {
+  padding: .5rem 2rem;
+  text-transform: capitalize;
+}
+
+
+.jokes {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.jokes p {
+  text-align: center;
+  font-size: 2rem;
+  width: 600px;
+  border: 1px solid black;
+  min-height: 400px;
+  height: fit-content;
+}
