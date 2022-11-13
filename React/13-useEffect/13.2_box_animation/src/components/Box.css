@@ -1,0 +1,16 @@
+.box {
+  position: relative;
+  background: red;
+  width: 200px;
+  height: 200px;
+  animation: slideIn 3s;
+}
+
+@keyframes slideIn{
+  from{
+    top:-200px;
+  }
+  to{
+    top: 0px;
+  }
+}
