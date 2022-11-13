@@ -1,7 +1,7 @@
 import FavoriteColor from "./components/FavoriteColor";
 
 const App = () => {
-  return <FavoriteColor color={'blue'} />;
+  return <FavoriteColor />;
 }
 
 export default App;
