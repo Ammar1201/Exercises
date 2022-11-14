@@ -48,7 +48,6 @@ const App = () => {
         <Button />
       </div>
       {filteredSearch && show && <AvatarsMap avatars={filteredSearch} />}
-      {console.log(message)}
       {filteredSearch && !show && !message &&<AvatarsMap avatars={avatars} />}
       {message && <div className='message'>{message}</div>}
     </div>
