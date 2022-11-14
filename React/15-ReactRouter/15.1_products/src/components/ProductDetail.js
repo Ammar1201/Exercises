@@ -1,14 +1,8 @@
-import { useParams, Link, Redirect, Route } from "react-router-dom";
-import {storeData} from '../store.js';
+import { Link, Redirect, Route, useLocation } from "react-router-dom";
 
 const ProductDetail = () => {
-  const params = useParams();
-  
-  const findProduct = () => {
-    return storeData.find(product => product.id === parseInt(params.id));
-  };
-  
-  const product = findProduct();
+  const location = useLocation();
+  const product = location.state;
 
   return ( 
     <div>
