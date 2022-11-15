@@ -1,0 +1,39 @@
+.App {
+  min-height: 100vh;
+  text-align: center;
+  padding: 1rem;
+  /* background-color: antiquewhite; */
+}
+
+h1,
+h3,
+h5 {
+  margin-bottom: 1rem;
+}
+label {
+  font-weight: bold;
+}
+label,
+input,
+button {
+  padding: 0.2rem 0.4rem;
+  font-size: 1.2rem;
+}
+.todos {
+  display: flex;
+  flex-direction: column;
+}
+.todos div {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+.todos p {
+  text-align: left;
+  padding: 0.2rem 0.4rem;
+  width: 200px;
+  font-size: 1.2rem;
+}
+.todos button {
+  font-size: 0.9rem;
+}
