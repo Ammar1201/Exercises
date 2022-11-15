@@ -1,0 +1,12 @@
+.todoItem {
+  height: 50px;
+}
+
+.todoItem label {
+  font-size: 2rem;
+}
+
+.todoItem button {
+  margin-left: 20px;
+  padding: .5rem 1rem;
+}
