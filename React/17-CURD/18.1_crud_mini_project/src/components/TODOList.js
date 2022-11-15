@@ -8,11 +8,12 @@ const TODOList = ({todoList}) => {
   const filterList = () => {
     const filter = todoList.filter(item => item.delete === false);
     const map = filter.map((item, index) => {
-      return {...item, id: index + 1};
+      const obj = {...item, id: index + 1};
+      return obj;
     });
-    if(map.length !== 0) {
-      window.localStorage.setItem('todoList', JSON.stringify(map));
-    }
+    // if(map.length !== 0) {
+    //   window.localStorage.setItem('todoList', JSON.stringify(map));
+    // }
     setFilteredList(map);
   };
 

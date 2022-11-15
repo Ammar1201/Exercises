@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './TODOForm.css';
 import TODOList from './TODOList';
 
 const TODOForm = () => {
-  const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem('todoList')) || []);
+  const [todoList, setTodoList] = useState([]);
   const [inputValue, setInputValue] = useState('');
 
   const clickHandler = () => {
@@ -18,7 +18,7 @@ const TODOForm = () => {
         itemText: inputValue,
         completed: false
       }]);
-      window.localStorage.setItem('todoList', JSON.stringify(todoList));
+      // window.localStorage.setItem('todoList', JSON.stringify(todoList));
     }
     else {
       setTodoList(prev => [...prev, {
@@ -27,7 +27,7 @@ const TODOForm = () => {
         itemText: inputValue,
         completed: false
       }]);
-      window.localStorage.setItem('todoList', JSON.stringify(todoList));
+      // window.localStorage.setItem('todoList', JSON.stringify(todoList));
     }
     setInputValue('');
   };
@@ -35,6 +35,13 @@ const TODOForm = () => {
   const changeHandler = ({target}) => {
     setInputValue(target.value);
   };
+
+  // useEffect(() => {
+  //   const tmp = JSON.parse(window.localStorage.getItem('todoList'));
+  //   if(tmp !== null && tmp !== '[]') {
+  //     setTodoList(tmp);
+  //   }
+  // }, []);
 
   return ( 
     <div>
