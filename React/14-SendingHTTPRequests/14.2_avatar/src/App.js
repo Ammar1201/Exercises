@@ -6,9 +6,8 @@ import './App.css';
 
 const App = () => {
   const [avatars, setAvatars] = useState([]);
-  const [filteredSearch, setFilteredSearch] = useState(null);
-  const [show, setShow]  = useState(null);
   const [message, setMessage] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const fetchAvatars = async () => {
@@ -27,28 +26,17 @@ const App = () => {
     fetchAvatars();
   }, []);
 
-  const getFilteredSearch = (filteredSearch) => {
-    setFilteredSearch(filteredSearch);
-    if(filteredSearch.length > 0) {
-      setShow(true);
-      setMessage(null);
-    }
-    if(filteredSearch.length === 0) {
-      setShow(false);
-      if(show !== null) { // first load show sets to null to prevent 'No Match Found' from appearing and show the avatars
-        setMessage('No Match Found'); // for some reason when the page loads sets the message to 'No Match Found' so the avatars doesn't appear
-      }
-    }
+  const getSearchQuery = (query) => {
+    setSearchQuery(query);
   };
 
   return (
     <div>
       <div>
-        <SearchInput avatars={avatars} getFilteredSearch={getFilteredSearch} />
+        <SearchInput avatars={avatars} getSearchQuery={getSearchQuery} />
         <Button />
       </div>
-      {filteredSearch && show && <AvatarsMap avatars={filteredSearch} />}
-      {filteredSearch && !show && !message &&<AvatarsMap avatars={avatars} />}
+      <AvatarsMap avatars={avatars} searchQuery={searchQuery} />
       {message && <div className='message'>{message}</div>}
     </div>
   );

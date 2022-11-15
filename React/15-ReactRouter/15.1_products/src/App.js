@@ -22,7 +22,7 @@ const App = () => {
           <Route path='/products/:id'>
             <ProductDetail />
           </Route>
-          <Route path='/:anyPath'>
+          <Route path='*'>
             <InvalidRoute />
           </Route>
         </Switch>
