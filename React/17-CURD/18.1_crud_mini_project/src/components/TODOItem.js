@@ -12,10 +12,9 @@ const TODOItem = ({todoItem, getDeleteId, getUpdateId}) => {
 
   return ( 
     <div className="todoItem">
-      {console.log(todoItem)}
       {todoItem.completed && <i className="fa-solid fa-check" onClick={updateHandle}></i>}
       {!todoItem.completed && <i className="fa-solid fa-x" onClick={updateHandle}></i>}
-      <label> - {todoItem.itemText}</label>
+      <label> - {todoItem.content}</label>
       <button onClick={deleteHandle}>Delete</button>
     </div> 
   );

@@ -1,34 +1,54 @@
 import React, {useState, useEffect} from 'react';
-import './TODOForm.css';
 import TODOList from './TODOList';
+import { baseUrl } from '../api';
+import axios from 'axios';
+import './TODOForm.css';
+import Spinner from './utils/Spinner';
 
 const TODOForm = () => {
   const [todoList, setTodoList] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const clickHandler = () => {
-    if(inputValue === '') {
+  useEffect(() => {
+    const fetchTodos = async () => {
+      try {
+        const res = await axios.get(baseUrl);
+        setTodoList(res.data);
+      }
+      catch(error) {
+        console.log(error);
+      }
+    };
+    fetchTodos();
+  }, []);
+
+  const addTaskReq = async () => {
+    try {
+      const res = await axios({
+        method: 'post',
+        url: baseUrl,
+        data: {
+          content: inputValue,
+          completed: false
+        }
+      })
+      setTodoList(prev => [...prev, res.data]);
+      return res.data;
+    }
+    catch (error) {
+      console.log(error);
+    }
+  };
+
+  const addTaskHandler = () => {
+    if(!inputValue.trim()) {
+      setInputValue('');
       return;
     }
-    
-    if(todoList === null || todoList.length === 0) {
-      setTodoList([{
-        id: 1,
-        delete: false,
-        itemText: inputValue,
-        completed: false
-      }]);
-      // window.localStorage.setItem('todoList', JSON.stringify(todoList));
-    }
-    else {
-      setTodoList(prev => [...prev, {
-        id: prev[prev.length - 1].id + 1,
-        delete: false,
-        itemText: inputValue,
-        completed: false
-      }]);
-      // window.localStorage.setItem('todoList', JSON.stringify(todoList));
-    }
+    setIsLoading(true);
+    addTaskReq();
+    setIsLoading(false);
     setInputValue('');
   };
 
@@ -36,20 +56,14 @@ const TODOForm = () => {
     setInputValue(target.value);
   };
 
-  // useEffect(() => {
-  //   const tmp = JSON.parse(window.localStorage.getItem('todoList'));
-  //   if(tmp !== null && tmp !== '[]') {
-  //     setTodoList(tmp);
-  //   }
-  // }, []);
-
   return ( 
     <div>
       <div className="todo">
         <label htmlFor="todo">Add todo</label>
         <input type="text" name="todo" value={inputValue} onChange={changeHandler} />
-        <button onClick={clickHandler}>Add</button>
+        <button onClick={addTaskHandler} disabled={isLoading}>Add</button>
       </div>
+      {isLoading && <Spinner />}
       <TODOList todoList={todoList} />
     </div>
   );

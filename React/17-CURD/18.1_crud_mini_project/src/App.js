@@ -1,15 +1,12 @@
 import React, {Fragment} from 'react';
-import Info from './components/Info';
-import './App.css';
+import Info from "./components/Info";
+import TODOForm from './components/TODOForm';
 
 const App = () => {
   return (
     <Fragment>
       <Info />
-      <div className='search'>
-        <label htmlFor="">Search User:</label>
-        <input type="text" />
-      </div>
+      <TODOForm />
     </Fragment>
   );
 }

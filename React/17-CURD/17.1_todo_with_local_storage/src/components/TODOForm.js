@@ -7,7 +7,7 @@ const TODOForm = () => {
   const [inputValue, setInputValue] = useState('');
 
   const clickHandler = () => {
-    if(inputValue === '') {
+    if(!inputValue.trim()) {
       return;
     }
     

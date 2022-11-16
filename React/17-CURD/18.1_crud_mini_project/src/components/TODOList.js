@@ -1,33 +1,65 @@
 import React, {useEffect, useState} from 'react';
 import TODOItem from './TODOItem';
+import { baseUrl } from '../api';
+import axios from 'axios';
 import './TODOList.css';
 
 const TODOList = ({todoList}) => {
   const [filteredList, setFilteredList] = useState(todoList);
 
-  const filterList = () => {
-    const filter = todoList.filter(item => item.delete === false);
-    const map = filter.map((item, index) => {
-      const obj = {...item, id: index + 1};
-      return obj;
-    });
-    // if(map.length !== 0) {
-    //   window.localStorage.setItem('todoList', JSON.stringify(map));
-    // }
-    setFilteredList(map);
-  };
-
   useEffect(() => {
     filterList();
   }, [todoList]);
 
+  const filterList = () => {
+    const filter = todoList.filter(item => item.delete === false);
+    setFilteredList(filter);
+  };
+
+  const deleteTaskReq = async (toDeleteId) => {
+    try {
+      const res = await axios({
+        method: 'delete',
+        url: `${baseUrl}${toDeleteId}`,
+      })
+      return res.data;
+    }
+    catch (error) {
+      console.log(error);
+    }
+  };
+
+  const updateTaskReq = async (toUpdateId) => {
+    try {
+      const res = await axios({
+        method: 'put',
+        url: `${baseUrl}${toUpdateId}`,
+        data: {
+          completed: todoList[toUpdateId - 1].completed
+        }
+      })
+      return res.data;
+    }
+    catch (error) {
+      console.log(error);
+    }
+  };
+
+  const findIdIndex = (id) => {
+    return filteredList.findIndex(task => task.id === id);
+  };
+
   const getDeleteId = (toDeleteId) => {
-    todoList[toDeleteId - 1].delete = true;
+    const idIndex = findIdIndex(toDeleteId);
+    todoList[idIndex].delete = true;
+    deleteTaskReq(toDeleteId);
     filterList();
   };
 
   const getUpdateId = (toUpdateId) => {
-    todoList[toUpdateId - 1].completed = !todoList[toUpdateId - 1].completed;
+    const idIndex = findIdIndex(toUpdateId);
+    todoList[idIndex].completed = !todoList[idIndex].completed;
+    updateTaskReq(toUpdateId);
     filterList();
   };
 
