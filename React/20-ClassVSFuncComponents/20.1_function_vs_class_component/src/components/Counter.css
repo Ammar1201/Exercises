@@ -1,0 +1,17 @@
+button {
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 1rem 2rem;
+}
+
+label {
+  font-size: 2rem;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
