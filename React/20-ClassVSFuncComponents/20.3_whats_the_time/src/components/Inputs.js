@@ -3,18 +3,6 @@ import React, { Component } from 'react';
 class Inputs extends Component {
   state = {seconds: '', minutes: '', hours: ''}; 
 
-  // secondsChanged() {
-
-  // }
-
-  // minutesChanged() {
-
-  // }
-
-  // hoursChanged() {
-
-  // }
-
   handleChange({target}) {
     const time = {};
     switch(target.id) {
