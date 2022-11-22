@@ -1,0 +1,48 @@
+.header {
+  width: 100%;
+  height: 5rem;
+  padding: 0 10%;
+}
+
+.header nav {
+  height: 100%;
+}
+
+.header ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.header li {
+  margin: 0 1rem;
+  width: 5rem;
+}
+
+.header button {
+  width: 100px;
+  height: 40px;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
+
+.headerDay {
+  background-color: #666;
+}
+
+.headerNight {
+  background-color: #333;
+}
+
+.headerNight button {
+  border: 1px solid orange;
+  background: black;
+  color: #fff;
+}

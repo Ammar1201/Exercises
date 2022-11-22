@@ -1,0 +1,15 @@
+.day {
+  height: 93.85vh;
+  background: #888;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+}
+
+.night {
+  height: 93.85vh;
+  background: #444;
+  color: orange
+}
