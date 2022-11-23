@@ -14,7 +14,6 @@ class Countries extends Component {
         const data = await response.json();
         this.setState({countries: data});
         this.setState({filteredCountries: data});
-        console.log(data);
       }
       catch(error) {
         console.log(error);
@@ -37,7 +36,6 @@ class Countries extends Component {
   componentWillUnmount() {
     if (this.state.controller) {
       this.state.controller.abort();
-      console.log("Fetch aborted");
     }
   }
 
