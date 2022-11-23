@@ -1,5 +1,11 @@
+import Countries from "./components/Countries";
+
 const App = () => {
-  return <h1>hello</h1>;
+  return (
+    <div>
+      <Countries />
+    </div>
+  );
 }
 
 export default App;
