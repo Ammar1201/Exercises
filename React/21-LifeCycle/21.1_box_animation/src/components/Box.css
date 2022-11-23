@@ -1,0 +1,14 @@
+.box {
+  background: red;
+  animation: slideIn 2s;
+  margin-bottom: 20px;
+}
+
+@keyframes slideIn{
+  from{
+    transform: translateX(-500px);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
