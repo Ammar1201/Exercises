@@ -30,7 +30,7 @@ class Countries extends Component {
     }
 
     const tmp = this.state.countries.filter(country => country.name.toLowerCase().includes(target.value.toLowerCase()));
-    this.setState({filteredCountries: [...tmp]}); 
+    this.setState({filteredCountries: [...tmp]});
   }
 
   componentWillUnmount() {
