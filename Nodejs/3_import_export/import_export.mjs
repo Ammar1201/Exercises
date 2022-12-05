@@ -9,6 +9,8 @@ import { add, subtract, divide } from './export_functions.mjs';
 // by using the extension .mjs or in the package.json file by adding type: module property.
 
 //* Give 2 node.js environment variables that are not available when using the import syntax.
+// __dirname
+// __filename
 
 //* Create 3 functions using the export/import syntax.
 
