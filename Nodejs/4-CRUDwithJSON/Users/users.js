@@ -17,8 +17,7 @@ const loadUsersData = () => {
 
 export const addUser = (name, email, password) => {
   const users = loadUsersData();
-  const id = uniqid();
-  users.push({id, name, email, password});
+  users.push({id: uniqid(), name, email, password});
   saveUsersData(users);
   console.log(chalk.green('User added successfully!'));
 };
@@ -37,16 +36,11 @@ export const removeUser = (id) => {
 
 export const updateUser = (id, name, email, password) => {
   const users = loadUsersData();
-  const userToUpdateIndex = users.findIndex(user => user.id === id);
-  if(userToUpdateIndex !== -1) {
-    const userToUpdate = users[userToUpdateIndex];
-    const updatedData = {
-      id,
-      name: name || userToUpdate.name,
-      email: email || userToUpdate.email,
-      password: password || userToUpdate.password
-    };
-    users.splice(userToUpdateIndex, 1, updatedData);
+  const user = users.find(user => user.id === id);
+  if(user) {
+    user.name = name || user.name;
+    user.email = email || user.email;
+    user.password = password || user.password;
     saveUsersData(users);
     console.log(chalk.green('User updated successfully!'));
   }  
@@ -57,9 +51,9 @@ export const updateUser = (id, name, email, password) => {
 
 export const readUser = (id) => {
   const users = loadUsersData();
-  const userToReadIndex = users.findIndex(user => user.id === id);
-  if(userToReadIndex !== -1) {
-    console.log(users[userToReadIndex]);
+  const user = users.find(user => user.id === id);
+  if(user) {
+    console.log(user);
   }
   else {
     console.log(chalk.red('User ID Not Found!'));
