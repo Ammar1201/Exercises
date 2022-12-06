@@ -2,19 +2,19 @@ const express = require('express');
 
 const app = express();
 
-app.get('/', (req, res) => {
+app.get('/numbers', (req, res) => {
   res.send(`Successful ${req.method} request`);
 });
 
-app.post('/', (req, res) => {
+app.post('/numbers', (req, res) => {
   res.send(`Successful ${req.method} request`);
 });
 
-app.put('/', (req, res) => {
+app.put('/numbers', (req, res) => {
   res.send(`Successful ${req.method} request`);
 });
 
-app.delete('/', (req, res) => {
+app.delete('/numbers', (req, res) => {
   res.send(`Successful ${req.method} request`);
 });
 
