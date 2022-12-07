@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ac5be97f-c6dc-4d48-aeb2-8037b5487872",
+    "name": "Keyboard",
+    "length": "862.06"
+  },
+  {
+    "id": "cff74a92-3318-4932-9b49-fa08d6365723",
+    "name": "Bike",
+    "length": "649.73"
+  },
+  {
+    "id": "81abd072-ac1e-4624-859f-9a3b7a8d69e4",
+    "name": "Tuna",
+    "length": "674.33"
+  },
+  {
+    "id": "b11e055b-fc8a-4362-a97e-e4bd3908ac4f",
+    "name": "Bacon",
+    "length": "566.07"
+  },
+  {
+    "id": "9435d846-6abf-4568-b66b-db8d54898109",
+    "name": "Gloves",
+    "length": "530.89"
+  }
+]
