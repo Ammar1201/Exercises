@@ -5,10 +5,11 @@ const App = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [message, setMessage] = useState('');
 
-  //  "proxy": "http://localhost:5000"
+  const reqBaseUrl = 'http://localhost:5000/weather';
+
   const fetchData = async (city) => {
     try {
-      const res = await fetch('http://localhost:5000/current?city=' + city);
+      const res = await fetch(`${reqBaseUrl}?city=${city}`);
       if (!res.ok) {
         throw Error();
       }
