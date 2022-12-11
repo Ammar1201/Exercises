@@ -1,0 +1,7 @@
+use findMyRestaurant
+
+db.restaurants.insertOne({restaurantName: "rest1", address: {city: "city1", street: "street1", coordinates: [-77.564, 40.677]}, cuisine: "cuisine1", halal: true, reviews: [{date: "12/5", score: 8}, {date: "15/4", score: 7.5}, {date: "12/3", score: 9}]})
+
+db.restaurants.insertOne({restaurantName: "rest2", address: {city: "city2", street: "street2", coordinates: [-99.564, 50.677]}, cuisine: "cuisine2", halal: true, reviews: [{date: "28/4", score: 6.5}, {date: "05/7", score: 7}, {date: "12/2", score: 7}]})
+
+db.restaurants.insertOne({restaurantName: "rest3", address: {city: "city3", street: "street3", coordinates: [-55.564, 100.677]}, cuisine: "cuisine3", halal: false, reviews: [{date: "13/5", score: 6}, {date: "16/4", score: 3}, {date: "11/3", score: 4}]})
