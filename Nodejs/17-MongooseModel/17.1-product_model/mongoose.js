@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import validator from "validator";
 
 mongoose.connect('mongodb://127.0.0.1:27017/shop', {
   useNewUrlParser: true
@@ -46,16 +47,8 @@ const Product = mongoose.model('Product', {
       type: String,
       required: true,
       validate(value) {
-        if (value.length !== 10) {
-          throw new Error('phone number must be 10 numbers');
-        }
-
-        if (value[0] !== '0') {
-          throw new Error('number should start with zero');
-        }
-
-        if (value[2] !== '0') {
-          throw new Error('third character should be zero');
+        if (!validator.isMobilePhone(value, ['he-IL'])) {
+          throw new Error('Entered Phone Number is not valid!');
         }
       }
     },
