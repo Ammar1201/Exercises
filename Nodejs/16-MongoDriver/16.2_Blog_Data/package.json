@@ -1,0 +1,16 @@
+{
+  "name": "16.2_blog_data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "blogs.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^4.12.1"
+  }
+}
