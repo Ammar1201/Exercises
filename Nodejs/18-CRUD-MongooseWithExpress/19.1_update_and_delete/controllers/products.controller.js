@@ -68,7 +68,6 @@ export const updateProduct = async (req, res) => {
     res.status(201).send(updatedProducts);
   }
   catch (err) {
-    console.log(err);
     res.status(400).send({ errorStatus: 400, errorMessage: err.message });
   }
 };
