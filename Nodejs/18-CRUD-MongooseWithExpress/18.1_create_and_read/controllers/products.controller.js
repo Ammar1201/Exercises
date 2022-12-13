@@ -1,4 +1,4 @@
-import { addProductToDB, getAllProductsFromDB, getSpecificProductsFromDB, getActiveProductsFromDB, getProductsByPriceFromDB } from "../services/products.service.js";
+import { addProductToDB, getAllProductsFromDB, getActiveProductsFromDB, getProductsByPriceFromDB } from "../services/products.service.js";
 
 export const addProduct = async (req, res) => {
   try {
@@ -6,7 +6,7 @@ export const addProduct = async (req, res) => {
     res.status(201).send(newProduct);
   }
   catch (err) {
-    res.status(409).send({ errorStatus: 409, errorMessage: err.message });
+    res.status(400).send({ message: err.message });
   }
 };
 
@@ -16,23 +16,12 @@ export const getAllProducts = async (req, res) => {
     res.status(200).send(products);
   }
   catch (err) {
-    res.status(404).send({ errorStatus: 404, errorMessage: err.message });
+    res.status(500).send({ message: err.message });
   }
 };
 
-export const getProduct = async (req, res) => {
-  if (req.body.productID === undefined) {
-    res.status(400).send({ errorStatus: 400, errorMessage: 'you must provide a product ID - productID' });
-    return;
-  }
-
-  try {
-    const products = await getSpecificProductsFromDB(req.body.productID);
-    res.status(200).send(products);
-  }
-  catch (err) {
-    res.status(404).send({ errorStatus: 404, errorMessage: err.message });
-  }
+export const getProductReq = async (req, res) => {
+  res.status(200).send(res.product);
 };
 
 export const getActiveProducts = async (req, res) => {
@@ -41,14 +30,14 @@ export const getActiveProducts = async (req, res) => {
     res.status(200).send(products);
   }
   catch (err) {
-    res.status(404).send({ errorStatus: 404, errorMessage: err.message });
+    res.status(500).send({ message: err.message });
   }
 };
 
 export const getProductsByPrice = async (req, res) => {
   const { min, max } = req.query;
   if (min === undefined || max === undefined) {
-    res.status(400).send({ errorStatus: 400, errorMessage: 'you must provide minimum and maximum price' })
+    res.status(400).send({ message: 'you must provide minimum and maximum price' })
     return;
   }
 
@@ -57,6 +46,6 @@ export const getProductsByPrice = async (req, res) => {
     res.status(200).send(products);
   }
   catch (err) {
-    res.status(404).send({ errorStatus: 404, errorMessage: err.message });
+    res.status(500).send({ message: err.message });
   }
 };

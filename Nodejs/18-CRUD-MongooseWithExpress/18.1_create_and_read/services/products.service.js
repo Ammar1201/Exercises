@@ -8,10 +8,6 @@ export const getAllProductsFromDB = async () => {
   return await Product.find({});
 };
 
-export const getSpecificProductsFromDB = async (productID) => {
-  return await Product.findOne({ _id: productID });
-};
-
 export const getActiveProductsFromDB = async () => {
   return await Product.find({ isActive: true });
 };
