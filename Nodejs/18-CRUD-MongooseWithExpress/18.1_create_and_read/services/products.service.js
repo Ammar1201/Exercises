@@ -1,8 +1,7 @@
 import { Product } from "../models/product.models.js";
 
 export const addProductToDB = async (product) => {
-  const newProduct = await Product.create(product);
-  return newProduct;
+  return await Product.create(product);;
 };
 
 export const getAllProductsFromDB = async () => {
@@ -18,6 +17,5 @@ export const getActiveProductsFromDB = async () => {
 };
 
 export const getProductsByPriceFromDB = async (min, max) => {
-  const tmp = await Product.find({ "details.price": { $gte: min, $lte: max } });
-  return tmp;
+  return await Product.find({ "details.price": { $gte: min, $lte: max } });;
 };

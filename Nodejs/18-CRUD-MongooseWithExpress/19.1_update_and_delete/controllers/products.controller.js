@@ -1,27 +1,31 @@
-import { deleteProductFromDB, deleteAllProductsFromDB, updateProductToDB } from "../services/products.services.js";
+import { deleteProductFromDB, deleteAllProductsFromDB, updateProductToDB } from "../services/products.service.js";
 
 export const deleteProduct = async (req, res) => {
+  if (req.body.productID === undefined) {
+    res.status(400).send({ errorStatus: 400, errorMessage: 'you must provide a product ID - productID' });
+    return;
+  }
+
   try {
-    if (req.body.productID === undefined) throw new Error('you must provide a product ID - productID');
     const deletedProduct = await deleteProductFromDB(req.body.productID);
     if (!deletedProduct) {
       res.status(404).send({ errorStatus: 404, errorMessage: 'productID not found!' });
       return;
     }
-    res.status(201).send(deletedProduct);
+    res.status(200).send(deletedProduct);
   }
   catch (err) {
-    res.status(400).send({ errorStatus: 400, errorMessage: err.message });
+    res.status(404).send({ errorStatus: 404, errorMessage: err.message });
   }
 };
 
 export const deleteAllProducts = async (req, res) => {
   try {
     const deletedProducts = await deleteAllProductsFromDB();
-    res.status(201).send(deletedProducts);
+    res.status(200).send(deletedProducts);
   }
   catch (err) {
-    res.status(400).send({ errorStatus: 400, errorMessage: err.message });
+    res.status(404).send({ errorStatus: 404, errorMessage: err.message });
   }
 };
 
@@ -50,7 +54,7 @@ export const updateProduct = async (req, res) => {
 
   const productToUpdate = req.body;
   if (productToUpdate.productID === undefined) {
-    res.status(404).send({ errorStatus: 404, errorMessage: 'you must provide a product ID - productID' });
+    res.status(400).send({ errorStatus: 400, errorMessage: 'you must provide a product ID - productID' });
     return;
   }
 
@@ -60,14 +64,14 @@ export const updateProduct = async (req, res) => {
   }
 
   try {
-    const updatedProducts = await updateProductToDB(productToUpdate);
-    if (!updatedProducts) {
+    const updatedProduct = await updateProductToDB(productToUpdate);
+    if (!updatedProduct) {
       res.status(404).send({ errorStatus: 404, errorMessage: 'productID not found!' });
       return;
     }
-    res.status(201).send(updatedProducts);
+    res.status(200).send(updatedProduct);
   }
   catch (err) {
-    res.status(400).send({ errorStatus: 400, errorMessage: err.message });
+    res.status(404).send({ errorStatus: 404, errorMessage: err.message });
   }
 };
